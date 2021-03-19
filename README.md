@@ -1,4 +1,4 @@
-# TODOる
+# TODO る
 
 [![Build Status](https://github.com/kinbiko/todoru/workflows/Go/badge.svg)](https://github.com/kinbiko/todoru/actions)
 [![Coverage Status](https://coveralls.io/repos/github/kinbiko/todoru/badge.svg?branch=main)](https://coveralls.io/github/kinbiko/todoru?branch=main)
@@ -7,33 +7,37 @@
 [![Go Documentation](http://img.shields.io/badge/godoc-documentation-blue.svg?style=flat)](https://pkg.go.dev/github.com/kinbiko/todoru?tab=doc)
 [![License](https://img.shields.io/github/license/kinbiko/todoru.svg?style=flat)](https://github.com/kinbiko/todoru/blob/master/LICENSE)
 
-`todoru` is a stack-based To Do list for the command line. Great for integrating with other tools.
+`todoru` is a stack-based To Do list for the command line. Great for integrating with other tools (Alfred workflow included).
 
 ## Usage
 
-Add items with `todoru add`.
+Add items with `todoru <task>`.
 Get the top of the stack with `todoru`.
 Pop the top of the stack with `todoru pop`.
 
 ```console
-$ todoru add solve world hunger
-$ todoru add fix global warming
-$ todoru add refactor legacy codebase
+$ todoru solve world hunger
+$ todoru fix global warming
+$ todoru refactor legacy codebase
 
 $ todoru
 refactor legacy codebase
 $ todoru pop
+popped "refactor legacy codebase"
 
 $ todoru
 fix global warming
 $ todoru pop
+popped "fix global warming"
 
 $ todoru
 solve world hunger
 $ todoru pop
+popped "solve world hunger"
 
 $ todoru
+Nothing left to do!
 
 $ todoru pop
-stack is empty. nothing to pop
+Stack is empty. Nothing to pop
 ```
