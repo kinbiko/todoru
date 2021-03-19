@@ -22,13 +22,14 @@ func Run(args []string, filepath string) (string, error) {
 		return app.get(), nil
 	}
 
-	switch cmd, rest := args[0], args[1:]; cmd {
-	case "add":
-		app.add(strings.Join(rest, " "))
-		return "", nil
-	case "pop":
-		return "", app.pop()
+	if args[0] == "pop" {
+		got := app.get()
+		if err := app.pop(); err != nil {
+			return "", err
+		}
+		return fmt.Sprintf(`popped "%s"`, got), nil
 	}
+	app.add(strings.Join(args, " "))
 	return "", nil
 }
 
@@ -69,7 +70,7 @@ func (a *application) get() string {
 	if len(a.stack) > 0 {
 		return a.stack[0]
 	}
-	return ""
+	return "Nothing left to do!"
 }
 
 func (a *application) add(todo string) {
@@ -78,7 +79,7 @@ func (a *application) add(todo string) {
 
 func (a *application) pop() error {
 	if len(a.stack) == 0 {
-		return fmt.Errorf("stack is empty. nothing to pop")
+		return fmt.Errorf("Stack is empty. Nothing to pop")
 	}
 	a.stack = a.stack[1:]
 	return nil
