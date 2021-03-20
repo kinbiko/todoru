@@ -1,4 +1,4 @@
-# TODO る
+# TODOる
 
 [![Build Status](https://github.com/kinbiko/todoru/workflows/Go/badge.svg)](https://github.com/kinbiko/todoru/actions)
 [![Coverage Status](https://coveralls.io/repos/github/kinbiko/todoru/badge.svg?branch=main)](https://coveralls.io/github/kinbiko/todoru?branch=main)
